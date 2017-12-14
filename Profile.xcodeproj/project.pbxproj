@@ -12,6 +12,16 @@
 		6DBEFEDB1FE1A06400C0FDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFED91FE1A06400C0FDBF /* Main.storyboard */; };
 		6DBEFEDD1FE1A06400C0FDBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFEDC1FE1A06400C0FDBF /* Assets.xcassets */; };
 		6DBEFEE01FE1A06400C0FDBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFEDE1FE1A06400C0FDBF /* LaunchScreen.storyboard */; };
+		6DBEFEE91FE1A2CA00C0FDBF /* menu_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEE71FE1A2CA00C0FDBF /* menu_TVCell.swift */; };
+		6DBEFEEA1FE1A2CA00C0FDBF /* menu_TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFEE81FE1A2CA00C0FDBF /* menu_TVCell.xib */; };
+		6DBEFEEC1FE1A40100C0FDBF /* Menu_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEEB1FE1A40100C0FDBF /* Menu_TVC.swift */; };
+		6DBEFEEE1FE1AA1100C0FDBF /* Profile_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */; };
+		6DBEFEF01FE1AA2300C0FDBF /* Setting_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */; };
+		6DBEFEF21FE1AA3700C0FDBF /* PasswordChange_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */; };
+		6DBEFEF41FE21E3800C0FDBF /* Profile_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */; };
+		6DBEFEF71FE2286D00C0FDBF /* SettingNotification_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */; };
+		6DBEFEF91FE2288500C0FDBF /* SettingContent_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */; };
+		6DBEFEFD1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +32,16 @@
 		6DBEFEDC1FE1A06400C0FDBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DBEFEDF1FE1A06400C0FDBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DBEFEE11FE1A06400C0FDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DBEFEE71FE1A2CA00C0FDBF /* menu_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menu_TVCell.swift; sourceTree = "<group>"; };
+		6DBEFEE81FE1A2CA00C0FDBF /* menu_TVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = menu_TVCell.xib; sourceTree = "<group>"; };
+		6DBEFEEB1FE1A40100C0FDBF /* Menu_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu_TVC.swift; sourceTree = "<group>"; };
+		6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_TVC.swift; sourceTree = "<group>"; };
+		6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting_TVC.swift; sourceTree = "<group>"; };
+		6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChange_TVC.swift; sourceTree = "<group>"; };
+		6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_TVCell.swift; sourceTree = "<group>"; };
+		6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotification_TVCell.swift; sourceTree = "<group>"; };
+		6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingContent_TVCell.swift; sourceTree = "<group>"; };
+		6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingChangePassword_TVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +80,26 @@
 				6DBEFEDC1FE1A06400C0FDBF /* Assets.xcassets */,
 				6DBEFEDE1FE1A06400C0FDBF /* LaunchScreen.storyboard */,
 				6DBEFEE11FE1A06400C0FDBF /* Info.plist */,
+				6DBEFEEB1FE1A40100C0FDBF /* Menu_TVC.swift */,
+				6DBEFEE71FE1A2CA00C0FDBF /* menu_TVCell.swift */,
+				6DBEFEE81FE1A2CA00C0FDBF /* menu_TVCell.xib */,
+				6DBEFEF51FE2281000C0FDBF /* SettingCell */,
+				6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */,
+				6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */,
+				6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */,
+				6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		6DBEFEF51FE2281000C0FDBF /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */,
+				6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */,
+				6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */,
+			);
+			name = SettingCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +164,7 @@
 			files = (
 				6DBEFEE01FE1A06400C0FDBF /* LaunchScreen.storyboard in Resources */,
 				6DBEFEDD1FE1A06400C0FDBF /* Assets.xcassets in Resources */,
+				6DBEFEEA1FE1A2CA00C0FDBF /* menu_TVCell.xib in Resources */,
 				6DBEFEDB1FE1A06400C0FDBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +177,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBEFED81FE1A06400C0FDBF /* ViewController.swift in Sources */,
+				6DBEFEF41FE21E3800C0FDBF /* Profile_TVCell.swift in Sources */,
+				6DBEFEE91FE1A2CA00C0FDBF /* menu_TVCell.swift in Sources */,
+				6DBEFEEC1FE1A40100C0FDBF /* Menu_TVC.swift in Sources */,
+				6DBEFEEE1FE1AA1100C0FDBF /* Profile_TVC.swift in Sources */,
+				6DBEFEF21FE1AA3700C0FDBF /* PasswordChange_TVC.swift in Sources */,
+				6DBEFEF91FE2288500C0FDBF /* SettingContent_TVCell.swift in Sources */,
+				6DBEFEF71FE2286D00C0FDBF /* SettingNotification_TVCell.swift in Sources */,
+				6DBEFEF01FE1AA2300C0FDBF /* Setting_TVC.swift in Sources */,
+				6DBEFEFD1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift in Sources */,
 				6DBEFED61FE1A06400C0FDBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +352,7 @@
 				6DBEFEE61FE1A06400C0FDBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
