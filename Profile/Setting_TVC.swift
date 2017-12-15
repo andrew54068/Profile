@@ -11,8 +11,7 @@ import UIKit
 class Setting_TVC: UITableViewController {
 
     private let notificationCellId = "notification"
-    
-    //use for headerCell and detailNotificationCell
+    private let headerViewId = "header"
     private let basicCellId = "basic"
     private let contentCellId = "settingContent"
     private let changePasswordCellId = "settingChangePassword"
@@ -29,6 +28,9 @@ class Setting_TVC: UITableViewController {
         tableView.estimatedRowHeight = 0
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        
+        let headerViewNib = UINib(nibName: "SettingHeaderView", bundle: nil)
+        tableView.register(headerViewNib, forCellReuseIdentifier: headerViewId)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,13 +47,10 @@ class Setting_TVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 0 {
-            return 1
-        }
-        else if section == 1{
+        if section == 0{
             
             // 1 for spaceCell
-            return contentArray.count + 1
+            return contentArray.count
         }
         else{
             return 1
@@ -61,18 +60,13 @@ class Setting_TVC: UITableViewController {
     //: header delegate
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0{
-            let notificationCell = tableView.dequeueReusableCell(withIdentifier: notificationCellId) as! SettingNotification_TVCell
-            return notificationCell
-        }
-        else{
-            let headerCell = tableView.dequeueReusableCell(withIdentifier: basicCellId)!
-            headerCell.textLabel?.text = headerArray[section - 1]
-            headerCell.textLabel?.font = headerCell.textLabel?.font.withSize(16)
-            headerCell.textLabel?.textColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1)
-            headerCell.backgroundColor = UIColor.white
-            return headerCell
-        }
+        let headerView = UINib(nibName: "SettingHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as! SettingHeaderView
+//        let headerView = tableView.dequeueReusableCell(withIdentifier: headerViewId) as! SettingHeaderView
+        headerView.headerLabel.text = headerArray[section]
+        headerView.headerLabel.font = headerView.headerLabel.font.withSize(16)
+        headerView.headerLabel.textColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1)
+        headerView.backgroundColor = UIColor.white
+        return headerView
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -86,12 +80,7 @@ class Setting_TVC: UITableViewController {
     
     //: tableView dataSource
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let spaceCell = tableView.dequeueReusableCell(withIdentifier: basicCellId)!
-            spaceCell.textLabel?.text = nil
-            return spaceCell
-        }
-        else if (indexPath.section == 1) && (indexPath.item == 5) {
+        if (indexPath.section == 1) && (indexPath.item == 5) {
             let spaceCell = tableView.dequeueReusableCell(withIdentifier: basicCellId)!
             spaceCell.textLabel?.text = nil
             return spaceCell
@@ -134,6 +123,7 @@ class Setting_TVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deleteSections(NSIndexSet(index: 0) as IndexSet, with: .automatic)
 //        navigationController?.popViewController(animated: true)
     }
     
