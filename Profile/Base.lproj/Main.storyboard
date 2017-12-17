@@ -106,7 +106,6 @@
                         <segue destination="h5p-JO-pRh" kind="push" id="Mtk-fW-c0I"/>
                         <segue destination="275-Xk-qsB" kind="push" id="hMj-O8-t8A"/>
                         <segue destination="Zv4-lL-2qC" kind="push" id="DVA-so-apC"/>
-                        <segue destination="WeD-ea-xuV" kind="push" id="DTq-g2-rdf"/>
                         <segue destination="5dz-qB-6ST" kind="push" id="vgY-Fe-dVQ"/>
                     </connections>
                 </tableViewController>
@@ -200,10 +199,10 @@
             </objects>
             <point key="canvasLocation" x="2832.8000000000002" y="-243.32833583208398"/>
         </scene>
-        <!--View Controller-->
+        <!--SettingTVC-->
         <scene sceneID="6AQ-pi-Jb0">
             <objects>
-                <viewController id="5dz-qB-6ST" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setting_TVC" id="5dz-qB-6ST" customClass="Setting_TVC" customModule="Profile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IbS-pr-ct6"/>
                         <viewControllerLayoutGuide type="bottom" id="OLB-lN-Vly"/>
@@ -264,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="127" width="375" height="540"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="basic" textLabel="Slh-2R-BAj" rowHeight="23" style="IBUITableViewCellStyleDefault" id="jUv-xH-5zF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingBasic" textLabel="Slh-2R-BAj" rowHeight="23" style="IBUITableViewCellStyleDefault" id="jUv-xH-5zF">
                                         <rect key="frame" x="0.0" y="28" width="375" height="23"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jUv-xH-5zF" id="Vci-Tp-gHj">
@@ -358,75 +357,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gMo-Vh-3iE"/>
+                    <connections>
+                        <outlet property="settingReminderView" destination="XQw-qf-Zy8" id="hos-2m-sTt"/>
+                        <outlet property="settingTableView" destination="E69-d9-IIu" id="rTz-DW-1uF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vb7-pZ-IGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3312.8000000000002" y="-958.4707646176912"/>
-        </scene>
-        <!--Setting-->
-        <scene sceneID="47u-r1-5k8">
-            <objects>
-                <tableViewController storyboardIdentifier="setting_TVC" id="WeD-ea-xuV" customClass="Setting_TVC" customModule="Profile" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ed-c4-Sq1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notification" rowHeight="45" id="jbS-pq-nw0" customClass="SettingNotification_TVCell" customModule="Profile" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="45"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jbS-pq-nw0" id="cKe-EV-id8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-0w-elB">
-                                            <rect key="frame" x="13" y="12" width="20.5" height="20.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="hSg-0w-elB" secondAttribute="height" multiplier="1:1" id="h1I-ip-qnr"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="系統通知關閉中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-nQ-F07">
-                                            <rect key="frame" x="41.5" y="10" width="121.5" height="24.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kS9-2c-0Fw">
-                                            <rect key="frame" x="298" y="10" width="62" height="24.5"/>
-                                            <state key="normal" title="開啟通知">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="hSg-0w-elB" firstAttribute="top" secondItem="cKe-EV-id8" secondAttribute="top" constant="12" id="033-JT-lbJ"/>
-                                        <constraint firstItem="uQm-nQ-F07" firstAttribute="leading" secondItem="hSg-0w-elB" secondAttribute="trailing" constant="8" id="2ZT-8Z-8wz"/>
-                                        <constraint firstItem="hSg-0w-elB" firstAttribute="leading" secondItem="cKe-EV-id8" secondAttribute="leading" constant="13" id="WRP-56-DKH"/>
-                                        <constraint firstItem="uQm-nQ-F07" firstAttribute="top" secondItem="cKe-EV-id8" secondAttribute="top" constant="10" id="X4r-Jc-Fs9"/>
-                                        <constraint firstAttribute="trailing" secondItem="kS9-2c-0Fw" secondAttribute="trailing" constant="15" id="YF7-pc-cPM"/>
-                                        <constraint firstAttribute="bottom" secondItem="uQm-nQ-F07" secondAttribute="bottom" constant="10" id="g2a-K0-3XB"/>
-                                        <constraint firstAttribute="bottom" secondItem="hSg-0w-elB" secondAttribute="bottom" constant="12" id="g82-81-FSE"/>
-                                        <constraint firstAttribute="bottom" secondItem="kS9-2c-0Fw" secondAttribute="bottom" constant="10" id="o4d-zZ-TYM"/>
-                                        <constraint firstItem="kS9-2c-0Fw" firstAttribute="top" secondItem="cKe-EV-id8" secondAttribute="top" constant="10" id="tVv-kU-vFe"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="notificationSwitchBtn" destination="kS9-2c-0Fw" id="bJb-Rr-pni"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="WeD-ea-xuV" id="cJk-Zq-fsu"/>
-                            <outlet property="delegate" destination="WeD-ea-xuV" id="W1r-N1-WgW"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Setting" id="Fl4-iB-xny"/>
-                    <connections>
-                        <segue destination="fBd-Ss-G1M" kind="push" id="BKC-q4-MaC"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yxe-r4-jXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3465" y="-243"/>
         </scene>

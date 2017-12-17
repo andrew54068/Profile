@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingHeaderView: UIView {
+class SettingHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet var headerLabel: UILabel!
     /*
