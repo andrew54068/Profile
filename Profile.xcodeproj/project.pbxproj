@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DBB10991FE644C1003A6BC5 /* ProfileContent_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */; };
+		6DBB109C1FE660F6003A6BC5 /* SettingNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */; };
 		6DBEFED61FE1A06400C0FDBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFED51FE1A06400C0FDBF /* AppDelegate.swift */; };
 		6DBEFED81FE1A06400C0FDBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFED71FE1A06400C0FDBF /* ViewController.swift */; };
 		6DBEFEDB1FE1A06400C0FDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFED91FE1A06400C0FDBF /* Main.storyboard */; };
@@ -18,7 +20,7 @@
 		6DBEFEEE1FE1AA1100C0FDBF /* Profile_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */; };
 		6DBEFEF01FE1AA2300C0FDBF /* Setting_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */; };
 		6DBEFEF21FE1AA3700C0FDBF /* PasswordChange_TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */; };
-		6DBEFEF41FE21E3800C0FDBF /* Profile_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */; };
+		6DBEFEF41FE21E3800C0FDBF /* ProfileName_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF31FE21E3800C0FDBF /* ProfileName_TVCell.swift */; };
 		6DBEFEF71FE2286D00C0FDBF /* SettingNotification_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */; };
 		6DBEFEF91FE2288500C0FDBF /* SettingContent_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */; };
 		6DBEFEFD1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContent_TVCell.swift; sourceTree = "<group>"; };
+		6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationView.swift; sourceTree = "<group>"; };
 		6DBEFED21FE1A06400C0FDBF /* Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBEFED51FE1A06400C0FDBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBEFED71FE1A06400C0FDBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +44,7 @@
 		6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_TVC.swift; sourceTree = "<group>"; };
 		6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting_TVC.swift; sourceTree = "<group>"; };
 		6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChange_TVC.swift; sourceTree = "<group>"; };
-		6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_TVCell.swift; sourceTree = "<group>"; };
+		6DBEFEF31FE21E3800C0FDBF /* ProfileName_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileName_TVCell.swift; sourceTree = "<group>"; };
 		6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotification_TVCell.swift; sourceTree = "<group>"; };
 		6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingContent_TVCell.swift; sourceTree = "<group>"; };
 		6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingChangePassword_TVCell.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DBB109A1FE64B21003A6BC5 /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DBEFEF31FE21E3800C0FDBF /* ProfileName_TVCell.swift */,
+				6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */,
+			);
+			name = ProfileCell;
+			sourceTree = "<group>";
+		};
 		6DBEFEC91FE1A06400C0FDBF = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +100,12 @@
 				6DBEFEEB1FE1A40100C0FDBF /* Menu_TVC.swift */,
 				6DBEFEE71FE1A2CA00C0FDBF /* menu_TVCell.swift */,
 				6DBEFEE81FE1A2CA00C0FDBF /* menu_TVCell.xib */,
-				6DBEFEF51FE2281000C0FDBF /* SettingCell */,
 				6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */,
+				6DBB109A1FE64B21003A6BC5 /* ProfileCell */,
 				6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */,
+				6DBEFEF51FE2281000C0FDBF /* SettingCell */,
 				6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */,
-				6DBEFEF31FE21E3800C0FDBF /* Profile_TVCell.swift */,
-				6DDFEC6F1FE369E2007207A2 /* SettingHeaderView.xib */,
-				6DDFEC711FE36A64007207A2 /* SettingHeaderView.swift */,
+				6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -104,6 +116,8 @@
 				6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */,
 				6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */,
 				6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */,
+				6DDFEC6F1FE369E2007207A2 /* SettingHeaderView.xib */,
+				6DDFEC711FE36A64007207A2 /* SettingHeaderView.swift */,
 			);
 			name = SettingCell;
 			sourceTree = "<group>";
@@ -184,14 +198,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DBEFED81FE1A06400C0FDBF /* ViewController.swift in Sources */,
-				6DBEFEF41FE21E3800C0FDBF /* Profile_TVCell.swift in Sources */,
+				6DBEFEF41FE21E3800C0FDBF /* ProfileName_TVCell.swift in Sources */,
 				6DBEFEE91FE1A2CA00C0FDBF /* menu_TVCell.swift in Sources */,
 				6DBEFEEC1FE1A40100C0FDBF /* Menu_TVC.swift in Sources */,
+				6DBB109C1FE660F6003A6BC5 /* SettingNotificationView.swift in Sources */,
 				6DBEFEEE1FE1AA1100C0FDBF /* Profile_TVC.swift in Sources */,
 				6DBEFEF21FE1AA3700C0FDBF /* PasswordChange_TVC.swift in Sources */,
 				6DBEFEF91FE2288500C0FDBF /* SettingContent_TVCell.swift in Sources */,
 				6DBEFEF71FE2286D00C0FDBF /* SettingNotification_TVCell.swift in Sources */,
 				6DDFEC721FE36A64007207A2 /* SettingHeaderView.swift in Sources */,
+				6DBB10991FE644C1003A6BC5 /* ProfileContent_TVCell.swift in Sources */,
 				6DBEFEF01FE1AA2300C0FDBF /* Setting_TVC.swift in Sources */,
 				6DBEFEFD1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift in Sources */,
 				6DBEFED61FE1A06400C0FDBF /* AppDelegate.swift in Sources */,

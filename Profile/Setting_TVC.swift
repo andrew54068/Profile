@@ -40,41 +40,32 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         let headerViewNib = UINib(nibName: "SettingHeaderView", bundle: nil)
         settingTableView.register(headerViewNib, forHeaderFooterViewReuseIdentifier: headerViewId)
-        
-//        settingTableView.register(SettingContent_TVCell.self, forCellReuseIdentifier: contentCellId)
-//        tableView.register(, forCellReuseIdentifier: <#T##String#>)
     
     }
 
     // MARK: - Table view data source
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return headerArray.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if section == 0{
             // 1 for spaceCell
             return contentArray.count + 1
         }
         else{
-            return 1
+            return 20
         }
     }
     
     //: header delegate
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UINib(nibName: "SettingHeaderView", bundle: nil).instantiate(withOwner: self, options: nil).first as! SettingHeaderView
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerViewId) as! SettingHeaderView
-//        let headerView = tableView.dequeueReusableCell(withIdentifier: headerViewId) as! SettingHeaderView
         headerView.headerLabel.text = headerArray[section]
-//        headerView.headerLabel.text = headerArray[section]
-//        headerView.headerLabel.font = headerView.headerLabel.font.withSize(16)
-//        headerView.headerLabel.textColor = UIColor(red: 35/255, green: 35/255, blue: 35/255, alpha: 1)
-        headerView.backgroundView?.backgroundColor = UIColor.white
+//        headerView.backgroundView?.backgroundColor = UIColor.black
+        
         return headerView
     }
     
@@ -95,9 +86,12 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             detailNotificationCell.textLabel?.text = "通知細項設定"
             detailNotificationCell.textLabel?.font = detailNotificationCell.textLabel?.font.withSize(13)
             detailNotificationCell.textLabel?.textColor = UIColor(red: 109/255, green: 109/255, blue: 114/255, alpha: 1)
+            detailNotificationCell.selectionStyle = .none
             return detailNotificationCell
         }
-        else if (indexPath.section == 1) && (indexPath.item == 0){
+        else if (indexPath.section == 1)
+//            && (indexPath.item == 0)
+        {
             let changePasswordCell = tableView.dequeueReusableCell(withIdentifier: changePasswordCellId)!
             return changePasswordCell
         }
@@ -123,8 +117,8 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deleteSections(NSIndexSet(index: 0) as IndexSet, with: .automatic)
-//        navigationController?.popViewController(animated: true)
+        let changePassword_TVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "passwordChange_TVC") as! PasswordChange_TVC
+        navigationController?.pushViewController(changePassword_TVC, animated: true)
     }
     
 

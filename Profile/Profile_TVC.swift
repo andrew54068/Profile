@@ -8,28 +8,47 @@
 
 import UIKit
 
-class Profile_TVC: UITableViewController {
+class Profile_TVC: UITableViewController, UITextFieldDelegate {
     
-    private let cellId = "profile_TVCell"
+    private let nameCellId = "profileName"
+    private let contentCellId = "profileContent"
     
-    var itemNameArray = ["Paul", "服務單位", "服務科別", "聯絡電話"]
-    var contentArray = ["ming@gmail.com", "林口長庚", "心臟科", "02-26542345"]
+    var itemLabelArray = ["Paul", "服務單位", "服務科別", "聯絡電話"]
+    var itemTextFieldArray = ["ming@gmail.com", "林口長庚", "心臟科", "02-26542345"]
+    var notFirst = false
+    var editClicked = 0 {
+        didSet{
+            if editClicked == 1{
+                editBtn.title = "Save"
+                tableView.reloadData()
+            }else{
+                notFirst = true
+                editBtn.title = "Edit"
+                tableView.reloadData()
+            }
+        }
+    }
+    @IBOutlet var editBtn: UIBarButtonItem!
+    @IBAction func editBtnClicked(_ sender: Any){
+        editClicked = editClicked ^ 1
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-//        navigationItem.title = "Profile"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tableView.addGestureRecognizer(tap)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func dismissKeyboard(){
+        tableView.endEditing(true)
+    }
+    
+    // MARK: - TextField Delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
+        return true
     }
 
     // MARK: - Table view data source
@@ -44,17 +63,31 @@ class Profile_TVC: UITableViewController {
         return 4
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! Profile_TVCell
-
-        if indexPath.item == 0{
-            cell.backgroundColor = UIColor.lightGray
+        if indexPath.item == 0 {
+            let nameCell = tableView.dequeueReusableCell(withIdentifier: nameCellId) as! ProfileName_TVCell
+            nameCell.nameLabel.text = "Paul"
+            nameCell.contentTextField.text = "ming@gmail.com"
+            nameCell.backgroundColor = UIColor.lightGray
+            nameCell.contentTextField.isUserInteractionEnabled = false
+            nameCell.selectionStyle = .none
+            return nameCell
+        }else{
+            let contentCell = tableView.dequeueReusableCell(withIdentifier: contentCellId, for: indexPath) as! ProfileContent_TVCell
+            
+            if editClicked == 1{
+                contentCell.contentTextField.isUserInteractionEnabled = true
+            }else{
+                contentCell.contentTextField.isUserInteractionEnabled = false
+                if notFirst{
+                    itemTextFieldArray[indexPath.item] = contentCell.contentTextField.text!
+                }
+            }
+            contentCell.contentLabel.text = itemLabelArray[indexPath.item]
+            contentCell.contentTextField.text = itemTextFieldArray[indexPath.item]
+            contentCell.contentTextField.delegate = self
+            return contentCell
         }
-        cell.itemName.text = itemNameArray[indexPath.item]
-        cell.contentTextField.text = contentArray[indexPath.item]
-
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -12,6 +12,8 @@ class Menu_TVC: UITableViewController {
 
     let thumbnailImage = ["icon_indi_profile_default", "icon_indicate_menu_setting_black", "icon_indicate_menu_ae_black", "icon_indicate_menu_help_black"]
     let menuItemLabelText = ["Profile", "Setting", "AE Management Tool", "Help"]
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,19 +1,20 @@
 //
-//  Profile_TVCell.swift
+//  ProfileContent_TVCell.swift
 //  Profile
 //
-//  Created by kidnapper on 14/12/2017.
+//  Created by kidnapper on 17/12/2017.
 //  Copyright © 2017 25sprout.com. All rights reserved.
 //
 
 import UIKit
 
-class Profile_TVCell: UITableViewCell {
-
-    @IBOutlet var itemName: UILabel!
+class ProfileContent_TVCell: UITableViewCell {
+    
+    
+    @IBOutlet var contentLabel: UILabel!
     
     @IBOutlet var contentTextField: UITextField!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
