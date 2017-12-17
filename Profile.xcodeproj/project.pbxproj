@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6DBB10991FE644C1003A6BC5 /* ProfileContent_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */; };
 		6DBB109C1FE660F6003A6BC5 /* SettingNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */; };
+		6DBB109E1FE6D61B003A6BC5 /* ContactUs_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB109D1FE6D61B003A6BC5 /* ContactUs_VC.swift */; };
+		6DBB10A01FE6E31E003A6BC5 /* PasswordChange_TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB109F1FE6E31E003A6BC5 /* PasswordChange_TVCell.swift */; };
+		6DBB10A21FE6E45A003A6BC5 /* PasswordChangeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB10A11FE6E45A003A6BC5 /* PasswordChangeFooterView.swift */; };
+		6DBB10A41FE6E48B003A6BC5 /* PasswordChangeFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB10A31FE6E48B003A6BC5 /* PasswordChangeFooterView.xib */; };
 		6DBEFED61FE1A06400C0FDBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFED51FE1A06400C0FDBF /* AppDelegate.swift */; };
 		6DBEFED81FE1A06400C0FDBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBEFED71FE1A06400C0FDBF /* ViewController.swift */; };
 		6DBEFEDB1FE1A06400C0FDBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DBEFED91FE1A06400C0FDBF /* Main.storyboard */; };
@@ -31,6 +35,10 @@
 /* Begin PBXFileReference section */
 		6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileContent_TVCell.swift; sourceTree = "<group>"; };
 		6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingNotificationView.swift; sourceTree = "<group>"; };
+		6DBB109D1FE6D61B003A6BC5 /* ContactUs_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactUs_VC.swift; sourceTree = "<group>"; };
+		6DBB109F1FE6E31E003A6BC5 /* PasswordChange_TVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChange_TVCell.swift; sourceTree = "<group>"; };
+		6DBB10A11FE6E45A003A6BC5 /* PasswordChangeFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeFooterView.swift; sourceTree = "<group>"; };
+		6DBB10A31FE6E48B003A6BC5 /* PasswordChangeFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordChangeFooterView.xib; sourceTree = "<group>"; };
 		6DBEFED21FE1A06400C0FDBF /* Profile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DBEFED51FE1A06400C0FDBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DBEFED71FE1A06400C0FDBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,13 +71,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6DBB109A1FE64B21003A6BC5 /* ProfileCell */ = {
+		6DBB109A1FE64B21003A6BC5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */,
 				6DBEFEF31FE21E3800C0FDBF /* ProfileName_TVCell.swift */,
 				6DBB10981FE644C1003A6BC5 /* ProfileContent_TVCell.swift */,
 			);
-			name = ProfileCell;
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		6DBB10A51FE6E51C003A6BC5 /* PasswordChange */ = {
+			isa = PBXGroup;
+			children = (
+				6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */,
+				6DBB109F1FE6E31E003A6BC5 /* PasswordChange_TVCell.swift */,
+				6DBB10A11FE6E45A003A6BC5 /* PasswordChangeFooterView.swift */,
+				6DBB10A31FE6E48B003A6BC5 /* PasswordChangeFooterView.xib */,
+			);
+			name = PasswordChange;
 			sourceTree = "<group>";
 		};
 		6DBEFEC91FE1A06400C0FDBF = {
@@ -100,26 +120,26 @@
 				6DBEFEEB1FE1A40100C0FDBF /* Menu_TVC.swift */,
 				6DBEFEE71FE1A2CA00C0FDBF /* menu_TVCell.swift */,
 				6DBEFEE81FE1A2CA00C0FDBF /* menu_TVCell.xib */,
-				6DBEFEED1FE1AA1100C0FDBF /* Profile_TVC.swift */,
-				6DBB109A1FE64B21003A6BC5 /* ProfileCell */,
-				6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */,
-				6DBEFEF51FE2281000C0FDBF /* SettingCell */,
-				6DBEFEF11FE1AA3700C0FDBF /* PasswordChange_TVC.swift */,
-				6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */,
+				6DBB109A1FE64B21003A6BC5 /* Profile */,
+				6DBEFEF51FE2281000C0FDBF /* Setting */,
+				6DBB10A51FE6E51C003A6BC5 /* PasswordChange */,
+				6DBB109D1FE6D61B003A6BC5 /* ContactUs_VC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		6DBEFEF51FE2281000C0FDBF /* SettingCell */ = {
+		6DBEFEF51FE2281000C0FDBF /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				6DBEFEEF1FE1AA2300C0FDBF /* Setting_TVC.swift */,
 				6DBEFEF61FE2286D00C0FDBF /* SettingNotification_TVCell.swift */,
+				6DBB109B1FE660F6003A6BC5 /* SettingNotificationView.swift */,
 				6DBEFEF81FE2288500C0FDBF /* SettingContent_TVCell.swift */,
 				6DBEFEFC1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift */,
 				6DDFEC6F1FE369E2007207A2 /* SettingHeaderView.xib */,
 				6DDFEC711FE36A64007207A2 /* SettingHeaderView.swift */,
 			);
-			name = SettingCell;
+			name = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +204,7 @@
 			files = (
 				6DBEFEE01FE1A06400C0FDBF /* LaunchScreen.storyboard in Resources */,
 				6DBEFEDD1FE1A06400C0FDBF /* Assets.xcassets in Resources */,
+				6DBB10A41FE6E48B003A6BC5 /* PasswordChangeFooterView.xib in Resources */,
 				6DBEFEEA1FE1A2CA00C0FDBF /* menu_TVCell.xib in Resources */,
 				6DBEFEDB1FE1A06400C0FDBF /* Main.storyboard in Resources */,
 				6DDFEC701FE369E2007207A2 /* SettingHeaderView.xib in Resources */,
@@ -205,11 +226,14 @@
 				6DBEFEEE1FE1AA1100C0FDBF /* Profile_TVC.swift in Sources */,
 				6DBEFEF21FE1AA3700C0FDBF /* PasswordChange_TVC.swift in Sources */,
 				6DBEFEF91FE2288500C0FDBF /* SettingContent_TVCell.swift in Sources */,
+				6DBB10A01FE6E31E003A6BC5 /* PasswordChange_TVCell.swift in Sources */,
 				6DBEFEF71FE2286D00C0FDBF /* SettingNotification_TVCell.swift in Sources */,
 				6DDFEC721FE36A64007207A2 /* SettingHeaderView.swift in Sources */,
 				6DBB10991FE644C1003A6BC5 /* ProfileContent_TVCell.swift in Sources */,
 				6DBEFEF01FE1AA2300C0FDBF /* Setting_TVC.swift in Sources */,
 				6DBEFEFD1FE23FC200C0FDBF /* SettingChangePassword_TVCell.swift in Sources */,
+				6DBB109E1FE6D61B003A6BC5 /* ContactUs_VC.swift in Sources */,
+				6DBB10A21FE6E45A003A6BC5 /* PasswordChangeFooterView.swift in Sources */,
 				6DBEFED61FE1A06400C0FDBF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

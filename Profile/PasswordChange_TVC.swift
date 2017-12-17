@@ -8,45 +8,78 @@
 
 import UIKit
 
-class PasswordChange_TVC: UITableViewController {
+class PasswordChange_TVC: UITableViewController, UITextFieldDelegate {
+    
+    private let cellId = "password"
+    
+    let contentTitle = ["舊密碼", "新密碼", "確認新密碼"]
+    var passwordArray = ["12345678", "", ""]
+    
+    @IBAction func save(_ sender: Any) {
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = "Change Password"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tableView.addGestureRecognizer(tap)
+        
+        tableView.estimatedRowHeight = 50
+    }
+    
+    func dismissKeyboard(){
+        tableView.endEditing(true)
+    }
+    
+    // MARK: - TextField Delegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordArray[textField.tag] = textField.text!
+        textField.endEditing(true)
+        if textField.tag == 0{
+            if passwordArray[0] != textField.text{
+                let view = UIView()
+                view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 20)
+                view.backgroundColor = UIColor(red: 204/255, green: 0, blue: 51/255, alpha: 0.8)
+                
+                tableView.addSubview(view)
+            }
+        }
+        else if textField.tag == 2{
+            if passwordArray[1] != passwordArray[2]{
+                print("確認密碼失敗")
+            }
+        }
+        return true
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return contentTitle.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! PasswordChange_TVCell
+        cell.passwordLabel.text = contentTitle[indexPath.item]
+        cell.passwordTextField.tag = indexPath.item
+        cell.passwordTextField.delegate = self
+//        cell.passwordTextField
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
