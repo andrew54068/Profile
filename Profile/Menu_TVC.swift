@@ -11,7 +11,7 @@ import UIKit
 class Menu_TVC: UITableViewController {
 
     let thumbnailImage = ["icon_indi_profile_default", "icon_indicate_menu_setting_black", "icon_indicate_menu_ae_black", "icon_indicate_menu_help_black"]
-    let menuItemLabelText = ["Profile", "Setting", "AE Management Tool", "Help"]
+    let menuItemLabelText = ["Profile", "Setting", "AE Management Tool", "Contact Us"]
     
     
 
@@ -48,8 +48,10 @@ class Menu_TVC: UITableViewController {
             
 //        case 2:
 //            <#code#>
-//        case 3:
-//            <#code#>
+        case 3:
+            let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contact")
+            navigationController?.pushViewController(setting, animated: true)
+            
         default:
             let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "setting_TVC")
             navigationController?.pushViewController(setting, animated: true)

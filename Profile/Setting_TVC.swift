@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -16,7 +17,7 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     private let contentCellId = "settingContent"
     private let changePasswordCellId = "settingChangePassword"
     
-    
+
     
     let headerArray = ["通知設定", "密碼設定"]
     let contentArray = ["接收通知", "", "新文章上架通知", "學術活動通知", "公告通知"]
@@ -25,9 +26,17 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet var settingReminderView: UIView!
     @IBOutlet var settingTableView: UITableView!
     
+    @IBOutlet var topEqualBottom: NSLayoutConstraint!
+    
+    @IBOutlet var toTop: NSLayoutConstraint!
+    
+    @IBOutlet var heightOfNotificationView: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         navigationItem.title = "Setting"
         navigationController?.navigationBar.isTranslucent = false
         
@@ -37,10 +46,38 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         settingTableView.estimatedRowHeight = 0
         settingTableView.rowHeight = UITableViewAutomaticDimension
         settingTableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+//        self.settingTableView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
+        
+        checkSystemSetting()
         
         let headerViewNib = UINib(nibName: "SettingHeaderView", bundle: nil)
         settingTableView.register(headerViewNib, forHeaderFooterViewReuseIdentifier: headerViewId)
     
+    }
+    
+    func checkSystemSetting(){
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            DispatchQueue.main.async {
+                if error != nil{
+                    print("error = \(String(describing: error))")
+                }else{
+                    if granted{
+                        self.settingReminderView.isHidden = true
+                        self.heightOfNotificationView.isActive = false
+                        self.topEqualBottom.isActive = false
+                        self.toTop.isActive = true
+//                        self.settingTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+                    }
+                    else{
+                        self.settingReminderView.isHidden = false
+                        self.toTop.isActive = false
+                        self.topEqualBottom.isActive = true
+                        self.heightOfNotificationView.isActive = true
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -55,11 +92,27 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             return contentArray.count + 1
         }
         else{
-            return 20
+            return 1
         }
     }
     
-    //: header delegate
+    // MARK: switch button logic
+    func switchChange(_ sender: UISwitch){
+        if sender.tag == 0{
+            if !sender.isOn{
+                
+            }
+        }
+        else{
+            
+        }
+    }
+    
+    func switchBtnLogic(notification: Notification){
+        
+    }
+    
+    // MARK: header delegate
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerViewId) as! SettingHeaderView
@@ -99,6 +152,12 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             let cell = tableView.dequeueReusableCell(withIdentifier: contentCellId, for: indexPath) as! SettingContent_TVCell
             cell.contentTitle.text = contentArray[indexPath.item]
+            cell.contentSwitch.tag = indexPath.item
+//            cell.contentSwitch.addTarget(self, action: #selector(switchChange(_:)), for: .valueChanged)
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "\(contentArray[indexPath.item])"), object: cell.contentSwitch)
+//            NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "\(contentArray[indexPath.item])", object: nil, queue: OperationQueue.main, using: { (notification) in
+//                <#code#>
+//            })
             return cell
         }
         
