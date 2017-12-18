@@ -44,16 +44,14 @@ class Menu_TVC: UITableViewController {
             let profile  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profile_TVC")
             navigationController?.pushViewController(profile, animated: true)
             profile.navigationItem.title = "profile"
-//        case 1:
-            
-//        case 2:
-//            <#code#>
-        case 3:
-            let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contact")
-            navigationController?.pushViewController(setting, animated: true)
-            
-        default:
+        case 1:
             let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "setting_TVC")
+            navigationController?.pushViewController(setting, animated: true)
+        case 2:
+            let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ae")
+            navigationController?.pushViewController(setting, animated: true)
+        default:
+            let setting = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "contact")
             navigationController?.pushViewController(setting, animated: true)
         }
     }
