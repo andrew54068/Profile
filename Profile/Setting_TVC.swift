@@ -9,14 +9,18 @@
 import UIKit
 import UserNotifications
 
-class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+enum NotificationSettingType {
+    case All, NewArticle, Event, System
+}
+
+class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SetteingCellDelegate {
 
 //    private let notificationCellId = "notification"
     private let headerViewId = "settingHeader"
     private let basicCellId = "settingBasic"
     private let contentCellId = "settingContent"
     private let changePasswordCellId = "settingChangePassword"
-    
+    private var allNotification = true
 
     
     let headerArray = ["通知設定", "密碼設定"]
@@ -55,7 +59,12 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     }
     
-    func checkSystemSetting(){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkSystemSetting()
+    }
+    
+    func checkSystemSetting() {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             DispatchQueue.main.async {
@@ -89,7 +98,7 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             // 1 for spaceCell
-            return contentArray.count + 1
+            return contentArray.count
         }
         else{
             return 1
@@ -128,13 +137,7 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     //: tableView dataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath.section == 0) && (indexPath.item == 5) {
-            let spaceCell = tableView.dequeueReusableCell(withIdentifier: basicCellId)!
-            spaceCell.textLabel?.text = nil
-            spaceCell.selectionStyle = .none
-            return spaceCell
-        }
-        else if (indexPath.section == 0) && (indexPath.item == 1){
+        if (indexPath.section == 0) && (indexPath.item == 1){
             let detailNotificationCell = tableView.dequeueReusableCell(withIdentifier: basicCellId)!
             detailNotificationCell.textLabel?.text = "通知細項設定"
             detailNotificationCell.textLabel?.font = detailNotificationCell.textLabel?.font.withSize(13)
@@ -153,11 +156,19 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let cell = tableView.dequeueReusableCell(withIdentifier: contentCellId, for: indexPath) as! SettingContent_TVCell
             cell.contentTitle.text = contentArray[indexPath.item]
             cell.contentSwitch.tag = indexPath.item
-//            cell.contentSwitch.addTarget(self, action: #selector(switchChange(_:)), for: .valueChanged)
-//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "\(contentArray[indexPath.item])"), object: cell.contentSwitch)
-//            NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "\(contentArray[indexPath.item])", object: nil, queue: OperationQueue.main, using: { (notification) in
-//                <#code#>
-//            })
+            cell.selectionStyle = .none
+            cell.delegate = self
+            
+            if allNotification == false {
+                cell.contentSwitch.isOn = false
+            }
+            else {
+                // parse by server
+                if indexPath.row == 0 {
+                    cell.contentSwitch.isOn = true
+                }
+            }
+            
             return cell
         }
         
@@ -176,54 +187,24 @@ class Setting_TVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let changePassword_TVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "passwordChange_TVC") as! PasswordChange_TVC
-        navigationController?.pushViewController(changePassword_TVC, animated: true)
+        if indexPath.section == 1{
+            let changePassword_TVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "passwordChange_TVC") as! PasswordChange_TVC
+            navigationController?.pushViewController(changePassword_TVC, animated: true)
+        }
     }
     
 
-    /*
-    //  to support conditional editing of the table view.
-     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func didSetSwitchValue(isOn: Bool, tag: Int) {
+        if tag == 0 {
+            allNotification = isOn
+            settingTableView.reloadData()
+        }
+        else {
+            if isOn == true && allNotification == false {
+                allNotification = true
+                settingTableView.reloadData()
+            }
+        }
     }
-    */
-
-    /*
-    //  to support editing the table view.
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    //  to support rearranging the table view.
-     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    //  to support conditional rearranging of the table view.
-     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

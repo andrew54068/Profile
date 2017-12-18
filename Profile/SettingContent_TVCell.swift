@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol SetteingCellDelegate {
+    func didSetSwitchValue(isOn:Bool, tag:Int)
+}
+
 class SettingContent_TVCell: UITableViewCell {
 
     @IBOutlet var contentTitle: UILabel!
     @IBOutlet var contentSwitch: UISwitch!
-    
+    var delegate:SetteingCellDelegate? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,6 +27,11 @@ class SettingContent_TVCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func didSwitch(_ sender: Any) {
+        let isOn = (sender as! UISwitch).isOn
+        delegate?.didSetSwitchValue(isOn:isOn, tag: contentSwitch.tag)
     }
 
 }
